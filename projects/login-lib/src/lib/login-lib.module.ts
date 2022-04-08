@@ -4,6 +4,7 @@ import { LoginLibComponent } from './login-lib.component';
 import { LoginComponent } from './modules/components/login/login.component';
 import { OtpComponent } from './modules/components/otp/otp.component';
 import { CommonModule } from '@angular/common';
+import { LoginStateService } from './services/login-state.service';
 
 
 
@@ -20,7 +21,12 @@ import { CommonModule } from '@angular/common';
   ],
   exports: [
     LoginLibComponent,
-    LoginComponent
+    LoginComponent,
+    OtpComponent
+  ],
+  providers: [
+    LoginStateService
   ]
+
 })
 export class LoginLibModule { }
