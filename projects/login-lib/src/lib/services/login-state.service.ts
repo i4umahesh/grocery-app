@@ -6,12 +6,10 @@ export class LoginStateService {
 
   private mobileSource$ = new BehaviorSubject<any>('');
 
-  mobileNumbers$ = this.mobileSource$.asObservable()
-
-  constructor() { 
-    
-  }
-  getMobileNumber(mNumber: any) {
+  eNumbers$ = this.mobileSource$.asObservable()
+  constructor() {}
+  
+  getMobileNumber(mNumber: any) { 
     this.mobileSource$.next(mNumber);
   }
 
