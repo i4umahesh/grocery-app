@@ -1,1 +1,7 @@
-<p>login works!</p>
+<form [formGroup]="loginForm">
+    <div class="mb-2">
+        <input type="text" class="form-control mb-2" minlength="10" maxlength="10" formControlName="mobileNumber" placeholder="Mobile number">   
+        <small *ngIf="(loginForm.controls['mobileNumber'].value && loginForm.controls['mobileNumber'].invalid)" class="bg-danger text-white p-2">Please enter valid mobile number</small> 
+        <button type="submit" [disabled]="loginForm.controls['mobileNumber'].invalid" class="btn btn-primary" (click)="submitLogin()">Submit</button>
+    </div>
+</form>

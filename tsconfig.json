@@ -10,11 +10,11 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "paths": {
-      "@login-lib/login-lib": [
+      "@grocery-app/login-lib": [
         "projects/login-lib/src/public-api",
         //"dist/login-lib/src/public-api",
       ],
-      "@login-lib/login-lib/*": [
+      "@grocery-app/login-lib/*": [
         "projects/login-lib",
         //"dist/login-lib"
       ]
