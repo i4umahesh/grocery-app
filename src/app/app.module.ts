@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { CommonModule } from '@angular/common';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { CommonModule } from '@angular/common';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

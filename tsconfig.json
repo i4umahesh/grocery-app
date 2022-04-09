@@ -17,6 +17,14 @@
       "@grocery-app/login-lib/*": [
         "projects/login-lib",
         //"dist/login-lib"
+      ],
+      "@add-address/add-address": [
+        "projects/add-address/src/public-api",
+        //"dist/login-lib/src/public-api",
+      ],
+      "@add-address/add-address/*": [
+        "projects/add-address",
+        //"dist/login-lib"
       ]
     },
     "noFallthroughCasesInSwitch": true,

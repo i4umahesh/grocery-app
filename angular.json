@@ -156,6 +156,49 @@
           }
         }
       }
+    },
+    "add-address": {
+      "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/add-address",
+      "sourceRoot": "projects/add-address/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/add-address/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/add-address/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/add-address/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/add-address/src/test.ts",
+            "tsConfig": "projects/add-address/tsconfig.spec.json",
+            "karmaConfig": "projects/add-address/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "grocery-app"

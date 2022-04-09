@@ -24,7 +24,7 @@ export class OtpComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.mobileService.mobileNumbers$.subscribe( res => {
+    this.mobileService.eNumbers$.subscribe( res => {
       console.log('mobileNumber', res) ;
       this.mobileNumber = res ;
       
