@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AddressRoutingModule } from './address-routing.module';
 import { AddressPageComponent } from './components/address-page/address-page.component';
-import { AddAddressModule } from '../../../../projects/add-address/src/lib/add-address.module';
+import { AddAddressModule } from '@add-address/add-address';
 
 
 @NgModule({

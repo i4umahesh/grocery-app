@@ -5,7 +5,7 @@
         <h5 class="mb-0">Add address</h5>
       </div>
       <div class="card-body">
-        <form [formGroup]="addressInfo">
+        <form  [formGroup]="addressForm">
           <!-- 2 column grid layout with text inputs for the first and last names -->
           <div class="row mb-4">
             <div class="col">
@@ -26,9 +26,9 @@
           <div class="form-outline mb-4">
             <select class="form-select" aria-label="Default select example" formControlName="location">
               <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              <option value="1">Hyderabad</option>
+              <option value="2">Secunderabad</option>
+              <option value="3">Ranga reddy</option>
             </select>
             <label class="form-label" for="form7Example3">Select location </label>
           </div>
@@ -51,6 +51,9 @@
             <label class="form-check-label" for="form7Example8">
               Create an account?
             </label>
+          </div>
+          <div>
+            <button type="submit"  class="btn btn-primary" (click)="submitAddress()">Submit</button>
           </div>
         </form>
       </div>

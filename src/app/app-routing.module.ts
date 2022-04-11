@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
  {
@@ -8,12 +9,14 @@ const routes: Routes = [
  },
  {
    path: 'address',
+   //canActivate: [KalgudiNoAuthGuard],
    loadChildren:() => import("./modules/address/address.module").then(m => m.AddressModule)
  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }

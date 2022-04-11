@@ -8,7 +8,12 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class AddressFormComponent implements OnInit {
 
-  addressInfo: FormGroup
+  addressInfo: FormGroup;
+
+  addressDetails:any[] = [];
+
+  localData:any[] = [];
+
   constructor(
     private fb: FormBuilder
   ) { 
@@ -18,12 +23,33 @@ export class AddressFormComponent implements OnInit {
       location: ['', Validators.required],
       houseNumber: ['', Validators.required],
       emailID: ['',Validators.required],
-      accountCreation: ['']
-
-    })
+      accountCreation: ['', Validators.requiredTrue]
+    });
   }
 
   ngOnInit(): void {
   }
+  submitAddress(){
+   // console.log(this.addressInfo.value)
+    this.addressDetails = this.addressInfo.value
+    this.localData = JSON.parse(localStorage.getItem('userInfo'));
 
+    this.localData.push(this.addressDetails);
+    localStorage.setItem("userInfo", JSON.stringify(this.localData));
+    var result = localStorage.getItem("userInfo");
+    console.log(result);
+
+    //localStorage.getItem("userInfo")
+    //localStorage.setItem('userInfo', JSON.stringify(this.addressDetails));
+
+    // const currentArray = this.storage.get(this.STORAGE_KEY);
+    // const index = currentArray.findIndex(e => e.id === id);
+    // if(index >= 0) {
+    //   currentArray[index] = {...currentArray[index], ...{Name:Name}}; 
+    //   this.storage.set(this.STORAGE_KEY, currentArray);
+    //   this.notifiy.showInfo('Name Updated'  , '');
+    // } else {
+    //   this.notifiy.showFailure('Error'  , '');
+    // }
+  }
 }

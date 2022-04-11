@@ -14,6 +14,10 @@ export class LoginComponent implements OnInit {
 
   mobileValid: boolean = false;
 
+  userArray:any[] = [];
+
+  validUser:boolean = false;
+
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -43,13 +47,36 @@ export class LoginComponent implements OnInit {
   }
 
   submitLogin() {
- 
+
     if(this.number.valid){
-      this.shareMessage.getMobileNumber(this.number.value)
-      this.router.navigate(['/login/otp'])
-    } 
-    //this.mobileValid = this.number.invalid ? true : false
+      this.userArray = JSON.parse(localStorage.getItem("userInfo"));
+      /**
+       * Find mobile number from local object
+       */
+      this.userArray.forEach(item => {
+        if(item.mobileNumber === this.number.value){
+          this.validUser = true
+          return
+        }
+      })
+
+      //console.log('User validation3', this.userArray, this.number.value, this.validUser);
+
+      if(this.validUser) {
+      /**
+       * Share mobile number to OTP component
+       */
+      this.shareMessage.getMobileNumber(this.number.value);
+      /**
+       * navigate to otp component with out payloads
+       */
+      this.router.navigate(['/login/otp']);
+      } else {
+        alert("Enter valid mobile number")
+      }
+      
 
   }
+}
 
 }

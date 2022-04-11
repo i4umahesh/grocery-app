@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { AddAddressComponent } from './add-address.component';
-import { AddressFormComponent } from './modules/components/address-form/address-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
+import { AddressFormComponent } from './modules/components/address-form/address-form.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -11,12 +10,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AddressFormComponent
   ],
   imports: [
+    CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [
     AddAddressComponent,
-    AddressFormComponent
+    AddressFormComponent,
+  ],
+  providers: [
+    
   ]
 })
 export class AddAddressModule { }

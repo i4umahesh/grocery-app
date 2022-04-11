@@ -1,7 +1,7 @@
 <form [formGroup]="otpForm">
     <div class="mb-2">
         <p>Otp send you register mobile number - {{mobileNumber}}</p>
-    <input type="text" class="form-control mb-2" minlength="10" maxlength="10" formControlName="otpNumber" placeholder="Enter OTP">   
+    <input type="text" class="form-control mb-2" minlength="6" maxlength="6" formControlName="otpNumber" placeholder="Enter OTP">   
       <small *ngIf="(otpForm.controls['otpNumber'].value!='' && otpForm.controls['otpNumber'].invalid)" class="bg-danger text-white p-2">Please enter valid mobile number</small> 
     <div>
         <button type="submit"  class="btn btn-primary" (click)="submitOtp()">Submit</button>
