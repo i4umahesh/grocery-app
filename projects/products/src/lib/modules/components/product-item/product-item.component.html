@@ -1,0 +1,18 @@
+<div class="product-item row">
+    <div class="card mb-3 col-6" *ngFor="let item of products" >
+        <div class="g-0">
+            <div>
+                <img src="{{item.imgsrc}}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div>
+                <div class="card-body">
+                    <h5 class="card-title p-0 m-0">{{item.title}}</h5>
+                    <small>{{item.type}}</small>
+                    <p class="p-0 pb-2">Price: <strong>{{item.price}}</strong></p>
+                    <p class="card-text p-0 m-0">{{item.description}}</p>
+                    <p class="card-text"><small class="text-muted">{{item.description}}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -6,6 +6,9 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": false,
+    "resolveJsonModule": true,
+    "esModuleInterop": true, 
+    "allowSyntheticDefaultImports":true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -25,6 +28,14 @@
       "@add-address/add-address/*": [
         "projects/add-address",
         //"dist/login-lib"
+      ],
+      "@products/products": [
+        "projects/products/src/public-api",
+        //"dist/products/src/public-api",
+      ],
+      "@products/products/*": [
+        "projects/products",
+        //"dist/products"
       ]
     },
     "noFallthroughCasesInSwitch": true,
@@ -40,6 +51,7 @@
       "es2020",
       "dom"
     ]
+      
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

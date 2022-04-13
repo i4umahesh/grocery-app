@@ -8,7 +8,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class AddressFormComponent implements OnInit {
 
-  addressInfo: FormGroup;
+  addressForm: FormGroup;
 
   addressDetails:any[] = [];
 
@@ -17,7 +17,7 @@ export class AddressFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder
   ) { 
-    this.addressInfo = this.fb.group({
+    this.addressForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       location: ['', Validators.required],
@@ -30,14 +30,14 @@ export class AddressFormComponent implements OnInit {
   ngOnInit(): void {
   }
   submitAddress(){
-   // console.log(this.addressInfo.value)
-    this.addressDetails = this.addressInfo.value
+   // console.log(this.addressForm.value)
+    this.addressDetails = this.addressForm.value
     this.localData = JSON.parse(localStorage.getItem('userInfo'));
 
     this.localData.push(this.addressDetails);
     localStorage.setItem("userInfo", JSON.stringify(this.localData));
     var result = localStorage.getItem("userInfo");
-    console.log(result);
+    //console.log(result);
 
     //localStorage.getItem("userInfo")
     //localStorage.setItem('userInfo', JSON.stringify(this.addressDetails));
